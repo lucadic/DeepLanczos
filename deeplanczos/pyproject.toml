@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "lucadic", email = "ld1440@princeton.edu" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = ["jax[cuda12]", "flax", "numpy", "h5py", "tqdm"]
 
 [project.optional-dependencies]
