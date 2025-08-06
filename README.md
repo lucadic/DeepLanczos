@@ -47,6 +47,9 @@ parser = lambda batch : (batch['imgs'], batch['labels'] )
 ```
 Given the PyTree of the model's parameters $P$, 
 ```python
+from deeplanczos import InitPowerMethodVector
+from deeplanczos import PowerMethodIterate
+
 V = InitPowerMethodVector(rng, P)
 num_iteration = 30
 V, History = PowerMethodIterate(loss, P, batch_iterable, num_iteraion, V0=V, batch_parser=parser, show_pbar=True)
