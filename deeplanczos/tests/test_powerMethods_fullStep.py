@@ -9,11 +9,11 @@ from utils.BN_mlp import SimpleMLP_wBN
 # @pytest.mark.slow
 def test_power_method_step():
     from utils.BN_mlp import SimpleMLP_wBN, cross_entropy_loss
-    from deep_lanczos import GenerateRandomVectors
-    from deep_lanczos import dot_product
-    from deep_lanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
-    from deep_lanczos import PowerMethodStep
-    from deep_lanczos import accumulateHVP
+    from deeplanczos import GenerateRandomVectors
+    from deeplanczos import dot_product
+    from deeplanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
+    from deeplanczos import PowerMethodStep
+    from deeplanczos import accumulateHVP
     from utils.batch import batch_iterator 
 
     model = SimpleMLP_wBN([5, 5])
@@ -48,14 +48,14 @@ def test_power_method_step():
 @pytest.mark.slow
 def test_power_method():
     from utils.BN_mlp import SimpleMLP_wBN, cross_entropy_loss
-    from deep_lanczos import GenerateRandomVectors
-    from deep_lanczos import dot_product
-    from deep_lanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
-    from deep_lanczos import PowerMethodStep
-    from deep_lanczos import accumulateHVP
-    from deep_lanczos import PowerMethodIterate
+    from deeplanczos import GenerateRandomVectors
+    from deeplanczos import dot_product
+    from deeplanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
+    from deeplanczos import PowerMethodStep
+    from deeplanczos import accumulateHVP
+    from deeplanczos import PowerMethodIterate
     from utils.batch import batch_iterator 
-    from deep_lanczos.utils import check_shapes 
+    from deeplanczos.utils import check_shapes 
 
     model = SimpleMLP_wBN([5, 5])
     rng_sample, rng_labels = jar.split(jar.PRNGKey(1994), 2)
@@ -80,5 +80,5 @@ def test_power_method():
     parser = lambda B: (B['imgs'], B['labels'] )
     V = InitPowerMethodVector(rng, P1)
     assert check_shapes(V, P1)
-    History = PowerMethodIterate(loss, P1, batch_iter, 30, V0=V, batch_parser=parser, show_pbar=True)
+    Vout, History = PowerMethodIterate(loss, P1, batch_iter, 30, V0=V, batch_parser=parser, show_pbar=True)
     print(jnp.array(History['alpha']))

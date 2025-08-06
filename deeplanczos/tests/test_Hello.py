@@ -2,7 +2,7 @@
 
 
 def test_import(): 
-    from deep_lanczos import hello
+    from deeplanczos import hello
     out = hello() 
     assert out == 0
 

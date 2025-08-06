@@ -9,9 +9,9 @@ from utils.BN_mlp import SimpleMLP_wBN
 # @pytest.mark.slow
 def test_HVP():
     from utils.BN_mlp import SimpleMLP_wBN, cross_entropy_loss
-    from deep_lanczos import GenerateRandomVectors
-    from deep_lanczos import dot_product
-    from deep_lanczos import InitPowerMethodVector, ComputeHVP
+    from deeplanczos import GenerateRandomVectors
+    from deeplanczos import dot_product
+    from deeplanczos import InitPowerMethodVector, ComputeHVP
     from utils.batch import batch_iterator
 
     model = SimpleMLP_wBN([5, 5])
@@ -47,10 +47,10 @@ def test_HVP():
 # @pytest.mark.slow
 def test_HVP_cycle():
     from utils.BN_mlp import SimpleMLP_wBN, cross_entropy_loss
-    from deep_lanczos import GenerateRandomVectors
-    from deep_lanczos import dot_product
-    from deep_lanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
-    from deep_lanczos import accumulateHVP
+    from deeplanczos import GenerateRandomVectors
+    from deeplanczos import dot_product
+    from deeplanczos import InitPowerMethodVector, ComputeHVP, initializeHVP
+    from deeplanczos import accumulateHVP
     from utils.batch import batch_iterator 
 
     model = SimpleMLP_wBN([5, 5])
