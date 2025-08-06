@@ -1,7 +1,7 @@
 [project]
 name = "deeplanczos"
 version = "0.1.0"
-description = "Add your description here"
+description = "JAX implementation of Power Method and Lanczos algorithms for estimating the largest eigenvalue of neural network Hessians"
 readme = "README.md"
 authors = [
     { name = "lucadic", email = "ld1440@princeton.edu" }
@@ -10,7 +10,7 @@ requires-python = ">=3.8"
 dependencies = ["jax[cuda12]", "flax", "numpy", "h5py"]
 
 [project.scripts]
-deep-lanczos = "deep_lanczos:main"
+deep-lanczos = "deeplanczos:main"
 
 [build-system]
 requires = ["setuptools>=61"]
