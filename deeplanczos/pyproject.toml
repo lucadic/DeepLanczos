@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "JAX implementation of Power Method and Lanczos algorithms for estimating the largest eigenvalue of neural network Hessians"
 readme = "README.md"
 authors = [
-    { name = "lucadic", email = "ld1440@princeton.edu" }
+    { name = "lucadic", email = "lucadc@princeton.edu" }
 ]
 requires-python = ">=3.10"
 dependencies = ["jax[cuda12]", "flax", "numpy", "h5py", "tqdm"]
